@@ -12,6 +12,9 @@ class Player{
         int _coeff;
         std::string _name;
 
+        void resetAtk();
+        bool aliveTest();
+
     public:
 
         int getHp();
@@ -28,6 +31,14 @@ class Player{
 
         Player();
         Player(int maxHp, int hp, int baseAtk, int currentAtk, int coeff, std::string name);
+
+
+        //In-game functions
+
+        void powerUp();
+        bool takeDamage(int dmg);
+        int attack();
+        void regen();
         
 };
 
