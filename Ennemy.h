@@ -26,6 +26,14 @@ class Ennemy{
        std::string getNomEnnemy();
        void setNomEnnemy(std::string nomEnnemy);
 
+       void degats();
+       void action();
+
+       bool stillAlive();
+       bool takeDamage(int dmg);
+
+       
+
     Ennemy(int atkEnnemy, int lifeEnnemy, int chargeEnnemy,std::string nomEnnemy);
 
 };

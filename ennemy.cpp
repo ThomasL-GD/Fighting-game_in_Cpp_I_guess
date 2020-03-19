@@ -1,6 +1,7 @@
 #ifndef ENNEMY_CPP
 #define ENNEMY_CPP
 
+#include <random>
 #include "Ennemy.h"
 
     int Ennemy:: getAtkEnnemy(){
@@ -33,6 +34,27 @@
 
     void Ennemy::setNomEnnemy(std::string nomEnnemy){
         _nomEnnemy= nomEnnemy; 
+    }
+
+    void Ennemy::action(){
+
+
+    }
+
+    bool Ennemy::stillAlive(){
+        bool alive = 1;
+        if( _lifeEnnemy <= 0){
+            alive = 0;
+            _lifeEnnemy = 0;
+        }
+        return alive;
+    }
+
+    bool Ennemy::takeDamage(int dmg){
+        int dmg=10;
+        _lifeEnnemy -= dmg;
+        bool alive = stillAlive();
+        return alive;
     }
 
     Ennemy::Ennemy(int atkEnnemy, int lifeEnnemy, int chargeEnnemy, std::string nomEnnemy): _atkEnnemy(atkEnnemy), _chargeEnnemy(chargeEnnemy),_lifeEnnemy(lifeEnnemy),_nomEnnemy(nomEnnemy){}
